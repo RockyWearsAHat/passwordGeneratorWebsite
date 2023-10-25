@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+        <div id="passwordControls" class="">
+          <input
+            id="passwordLengthInput"
+            value=""
+            onkeypress="return isNumber(event)"
+            type="text"
+            placeholder="Password Length"
+          />
+          <div id="checkboxes">
+            <span
+              ><input id="useLowercase" type="checkbox" checked="true" />
+              <label for="useLowercase">Lowercase?</label></span
+            >
+
+            <span
+              ><input id="useUppercase" type="checkbox" checked="true" />
+              <label for="useUppercase">Uppercase?</label></span
+            >
+
+            <span
+              ><input id="useNumbers" type="checkbox" />
+              <label for="useNumbers">Numbers?</label></span
+            >
+
+            <span
+              ><input id="useSymbols" type="checkbox" />
+              <label for="useSymbols">Symbols?</label></span
+            >
+          </div>
+        </div>
+
+        <div class="customCharacterArray stopUserTextHighlighting">
+          <span
+            ><input id="useCustomCharacterArray" type="checkbox" />
+            <label
+              class="stopUserTextHighlighting"
+              for="useCustomCharacterArray"
+              >Use Custom Characters?</label
+            ></span
+          >
+          <span
+            id="customCharacterArrayInput"
+            role="textbox"
+            contenteditable
+          ></span>
+          <span id="customCharacterArrayNoteLabel" class="hidden"
+            ><p>
+              <em>NOTE</em> - Custom Character Array Is Sensitive To Repeat
+              Characters
+            </p></span
+          >
+        </div>
+        <div class="card-footer">
+          <button id="generate" class="btn">Generate Password</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
